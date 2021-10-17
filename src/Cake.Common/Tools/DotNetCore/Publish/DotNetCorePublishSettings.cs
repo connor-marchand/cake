@@ -153,6 +153,16 @@ namespace Cake.Common.Tools.DotNetCore.Publish
         /// Requires .NET 5 or newer.
         /// </remarks>
         public bool? IncludeAllContentForSelfExtract { get; set; }
+        
+        /// <summary>
+        /// Gets or sets a value indicating whetther or not to compress assemblies in single file app.
+        /// This produces a single-file that has all of the embedded assemblies compressed which can
+        /// significantly reduce the size of the executable.
+        /// </summary>
+        /// <remarks>
+        /// Requires .NET 6.x or newer.
+        /// </remarks>
+        public bool? EnableCompressInSingleFile { get; set; }
 
         /// <summary>
         /// Gets or sets the specified NuGet package sources to use during the restore.

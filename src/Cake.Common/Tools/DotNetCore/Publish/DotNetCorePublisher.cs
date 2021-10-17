@@ -242,6 +242,19 @@ namespace Cake.Common.Tools.DotNetCore.Publish
                     builder.Append("-p:IncludeAllContentForSelfExtract=false");
                 }
             }
+            
+            // Publish CompressionInSingleFile
+            if (settings.EnableCompressInSingleFile.HasValue)
+            {
+                if (settings.EnableCompressInSingleFile.Value)
+                {
+                    builder.Append("-p:EnableCompressInSingleFile=true");
+                }
+                else
+                {
+                    builder.Append("-p:EnableCompressInSingleFile=false")
+                }
+            }
 
             // Sources
             if (settings.Sources != null)
